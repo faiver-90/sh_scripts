@@ -23,7 +23,7 @@ if ! git show-ref --verify --quiet refs/remotes/origin/$BRANCH_NAME; then
 fi
 
 echo "Выполняем merge 'origin/$BRANCH_NAME' в '$CURRENT_BRANCH' с опцией -X ours..."
-if git merge -X ours origin/$BRANCH_NAME; then
+if git merge origin/$BRANCH_NAME; then
   echo "Merge успешно завершён!"
 else
   echo "Во время слияния возникли конфликты. Пожалуйста, разрешите их вручную:"
