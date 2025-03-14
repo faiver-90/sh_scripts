@@ -1,0 +1,8 @@
+*
+!.gitignore
+!add_commit.sh
+!commit.sh
+!docker.sh
+!merge.sh
+!rebase.sh
+!yaml_comand_web.txt
