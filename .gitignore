@@ -6,3 +6,4 @@
 !merge.sh
 !rebase.sh
 !yaml_comand_web.txt
+!push_to_docker.sh
