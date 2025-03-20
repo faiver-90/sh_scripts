@@ -1,1 +1,13 @@
 print(json.dumps(data, indent=4, ensure_ascii=True))
+
+has_project_role(request.user, project_id, ["admin", "moderator"])
+has_project_role(request.user, project_id, [RoleType.ADMIN, RoleType.EDITOR])
+
+# Только модераторам
+has_group_role(request.user, group_id, [RoleType.MODERATOR])
+
+ПРоверка на админа, если не админ, то овнер, или ошибка
+    try:
+        has_project_role(request.user, project_id, [RoleType.ADMIN])
+    except PermissionError:
+        verify_project_owner(request.user, project_id)
