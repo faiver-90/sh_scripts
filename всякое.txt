@@ -11,3 +11,10 @@ has_group_role(request.user, group_id, [RoleType.MODERATOR])
         has_project_role(request.user, project_id, [RoleType.ADMIN])
     except PermissionError:
         verify_project_owner(request.user, project_id)
+
+
+verify_project_owner(user, project_id):
+verify_group_owner(user, group_id):
+has_project_role(user, project_id, allowed_roles: list[RoleType]):
+has_group_role(user, group_id, allowed_roles: list[RoleType]):
+
