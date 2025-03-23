@@ -18,3 +18,10 @@ verify_group_owner(user, group_id):
 has_project_role(user, project_id, allowed_roles: list[RoleType]):
 has_group_role(user, group_id, allowed_roles: list[RoleType]):
 
+
+SELECT p.code, p.name FROM common_permission p JOIN common_admin_permissions ap ON ap.permission_id = p.id WHERE ap.admin_id = 3;
+@AccessService.require_permission(
+    permission_code=[PermissionChoices.NEWS,
+                     PermissionChoices.USERS],
+    roles=[RoleChoices.MODERATOR]
+)
